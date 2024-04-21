@@ -11,10 +11,9 @@
     <div class="col-sm">
         <div class="sidebar">
             <ul>
-                <li><a class="active" href="#home">Home</a><br></li>
+
                 <li><a href="/create">Add New</a><br></li>
-                <li><a href="/visuals">Visuals</a><br></li>
-                <li><a href="#search">Search</a><br></li>
+
             </ul>
         </div>
     </div>
@@ -28,14 +27,14 @@
                     <table class="table-responsive" id="myTable" width="100%">
                         <thead class="thead-dark">
                             <br>
-                            <th width="8%">Date</th>
-                            <th width="9%">Amount $</th>
+                            <th width="10%">Date</th>
+                            <th width="11%">Amount $</th>
                             <th width="15%">Category</th>
                             <th width="15%">Vendor</th>
                             <th width="24%">Caption</th>
                             <th width="15%">Payment Method</th>
-                            <th width="7%">Edit</th>
-                            <th width="7%">Delete</th>
+                            <th width="5%">Edit</th>
+                            <th width="5%">Delete</th>
                         </thead>
                         <tbody>
                         {% for exp in exp_list %}     
@@ -46,8 +45,8 @@
                                 <td>{{ exp.ven }}</td>  
                                 <td>{{ exp.cap }}</td>  
                                 <td>{{ exp.pmeth }}</td>  
-                                <td><a href = "edit.html">Edit</a></td>
-                                <td><a href = #delete><i class="bi-trash"></i></a></td>
+                                <td><a href = "{% url 'edit' exp.pk %}">Edit</a></td>
+                                <td><a href = "{% url 'delete' exp.pk %}">Delete</a></td>
                             </tr>  
                         {% endfor %}
                         </tbody>
